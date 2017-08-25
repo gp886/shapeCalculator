@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Shape Dimension Calculator</title>
+  <meta name="viewport" content="width=device-width">
+  <script>
+
+    function myFunctionA(){
+      var side1 = prompt("Enter first side of Triangle", "");
+      var side2 = prompt("Enter second side of Triangle", "");
+      var side3 = prompt("Enter second side of Triangle", "");
+      var perimeter = parseInt(side1)+parseInt(side2)+parseInt(side3);
+      var semiPerimeter = perimeter*0.5;
+      var area = Math.sqrt((semiPerimeter)*(semiPerimeter-side1)*(semiPerimeter-side2)*(semiPerimeter-side3));
+      var height = area/side1;
+      document.getElementById("area").innerHTML = "Area : "+ area;
+      document.getElementById("perimeter").innerHTML = "Perimeter : "+perimeter;
+      var c=document.getElementById("myCanvas");
+      var ctx=c.getContext("2d");
+      ctx.beginPath();
+      ctx.clearRect(0,0,c.width,c.height);
+      ctx.moveTo(300,20);
+      ctx.lineTo(450,230);
+      ctx.lineTo(150,230);
+      ctx.fillStyle = "Red";
+      ctx.fill();
+    }
+
+    function myFunctionB(){
+      var side = prompt("Enter side of Square", "");
+      var perimeter = 4*parseInt(side);
+      var area = side*side;
+      document.getElementById("area").innerHTML = "Area : "+ area;
+      document.getElementById("perimeter").innerHTML = "Perimeter : "+perimeter;
+
+      var c=document.getElementById("myCanvas");
+      var ctx=c.getContext("2d");
+      ctx.beginPath();
+      ctx.clearRect(0,0,c.width,c.height);
+      ctx.rect(225,50,150,150);
+      ctx.fillStyle = "blue";
+      ctx.fill();
+    }
+
+    function myFunctionC(){
+      var radius = prompt("Enter radius of Circle", "");
+      var perimeter = 2*3.14*radius;
+      var area = 3.14*radius*radius;
+      document.getElementById("area").innerHTML = "Area : "+ area;
+      document.getElementById("perimeter").innerHTML = "Perimeter : "+perimeter;
+
+      var c=document.getElementById("myCanvas");
+      var ctx=c.getContext("2d");
+      ctx.beginPath();
+      ctx.clearRect(0,0,c.width,c.height);
+      ctx.arc(100,75,50,0,2*Math.PI);
+      ctx.fillStyle = "yellow";
+      ctx.fill();
+    }
+
+    function myFunctionD(){
+      var side = prompt("Enter side of Hexagon", "");
+      var perimeter = 6*side;
+      var area = 3*Math.sqrt(3)*0.5*side*side;
+      document.getElementById("area").innerHTML = "Area : "+ area;
+      document.getElementById("perimeter").innerHTML = "Perimeter : "+perimeter;
+      var c=document.getElementById("myCanvas");
+      var ctx=c.getContext("2d");
+      ctx.beginPath();
+      ctx.clearRect(0,0,c.width,c.height);
+      ctx.moveTo(300, 20);
+      ctx.lineTo(220, 80);
+      ctx.lineTo(220, 180);
+      ctx.lineTo(300, 240);
+      ctx.lineTo(380, 180);
+      ctx.lineTo(380, 80);
+      ctx.fillStyle = "pink";
+      ctx.fill();
+    }
+
+    function myFunctionE(){
+      var length = prompt("Enter length of Rectangle", "");
+      var breadth = prompt("Enter breadth of Rectangle", "");
+      var perimeter = 2*(parseInt(length)+parseInt(breadth));
+      var area = parseInt(length)*parseInt(breadth);
+      document.getElementById("area").innerHTML = "Area : "+ area;
+      document.getElementById("perimeter").innerHTML = "Perimeter : "+perimeter;
+      var c=document.getElementById("myCanvas");
+      var ctx=c.getContext("2d");
+      ctx.beginPath();
+      ctx.clearRect(0,0,c.width,c.height);
+      ctx.rect(200,50,200,150);
+      ctx.fillStyle = "GREEN";
+      ctx.fill();
+    }
+  </script>
+</head>
+
+<body id="main">
+  <header style="background-color: #000000">
+    <img style="padding-left: 500px" src="E:\books\Internet and Web Systems\IMG1.png"></img>
+    <img style="padding-left: 320px" src="E:\books\Internet and Web Systems\IMG3.png"></img>
+  </header>
+  <nav style="background-color: #FFFFFF">
+    <img style="padding-left: 50px" src="E:\books\Internet and Web Systems\IMG4.png" onclick='myFunctionA()'></img>
+    <img style="padding-left: 100px" id="square" src="E:\books\Internet and Web Systems\IMG5.png" onclick='myFunctionB()'></img>
+    <img style="padding-left: 100px" id="circle" src="E:\books\Internet and Web Systems\IMG6.png" onclick='myFunctionC()'></img>
+    <img style="padding-left: 100px; padding-top: 40px;"  id="hexagon" src="E:\books\Internet and Web Systems\IMG7.png" onclick='myFunctionD()'></img>
+    <img style="padding-left: 100px" id="rectangle" src="E:\books\Internet and Web Systems\ING8.png" onclick='myFunctionE()'></img>
+  </nav>
+  <section style="background-color: #FFFFFF; padding-left: 380px; padding-top: 50px">
+    <canvas id="myCanvas"  width="600" height="250" style="border:1px solid black;">
+    </canvas>
+    <p style="background-color: #000000; color: #FFFFFF" id="area" style="padding-left: 50px"></p>
+    <p style="background-color: #000000; color: #FFFFFF" id="perimeter" style="padding-left: 50px"></p>
+  </section>
+</body>
+</html>
